@@ -3,11 +3,19 @@ import ProductRow from "./productRow";
 class ProductTable extends Component {
   constructor(propis) {
     super(propis);
-    this.state = {};
   }
   render() {
+    const filterText = this.props.filterText;
+    const inStockOnly = this.props.filterText;
+
     const rows = [];
     this.props.products.forEach((product) => {
+      if (product.name.indexOf(filterText.toLowerCase()) === -1) {
+        return;
+      }
+      if (inStockOnly && !product.stocked) {
+        return;
+      }
       rows.push(<ProductRow product={product} />);
     });
     return (
