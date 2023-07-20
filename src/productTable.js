@@ -16,7 +16,7 @@ class ProductTable extends Component {
       if (inStockOnly && !product.stocked) {
         return;
       }
-      rows.push(<ProductRow product={product} />);
+      rows.push(<ProductRow product={product} key={product.name} />);
     });
     return (
       <table>

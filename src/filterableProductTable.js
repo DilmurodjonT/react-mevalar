@@ -25,12 +25,12 @@ class FilterableProductTable extends Component {
           filterText={this.state.filterText}
           inStockOnly={this.state.inStockOnly}
           onFilterTextChange={this.handleFilterTextChange}
+          onInStockChange={this.handleInStockChange}
         />
         <ProductTable
           products={this.props.products}
           filterText={this.state.filterText}
           inStockOnly={this.state.inStockOnly}
-          onInStockChange={this.handleInStockChange}
         />
       </div>
     );
